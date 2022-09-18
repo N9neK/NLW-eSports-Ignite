@@ -14,7 +14,7 @@ module.exports = {
         galaxy: "url('/background-galaxy.png')",
         'nlw-grandient':
           'linear-gradient(90deg, #9572FC 0%, #43E7AD 50.00%, #E1D55D 100%)',
-          'game-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(25,7,59,0.9) 67.08%)'
+          'game-gradient': 'linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(19,17,39,0.9) 67.08%)'
       }
     }
   },

@@ -15,7 +15,7 @@ export const THEME = {
     SUCCESS: '#34D399',
     ALERT: '#F87171',
 
-    FOOTER: ['rgba(0,0,0,0)', 'rgba(25,7,59,0.9)'],
+    FOOTER: ['rgba(0,0,0,0)', 'rgba(19,17,39,0.9)'],
     OVERLAY: 'rgba(0,0,0,0.6)',
   },
 
