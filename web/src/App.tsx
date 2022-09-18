@@ -7,6 +7,7 @@ import { GameBanner } from './components/GameBanner';
 import './styles/main.css';
 
 import logoImg from './assets/logo-nlw-esports.svg';
+import { Input } from "./components/Form/Input";
 
 interface Game {
   id: string;
@@ -63,58 +64,73 @@ function App() {
           <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-black/25 ">
             <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
 
-            <Dialog.Content>
-              <form>
-                <div>
-                  <label htmlFor="game">Qual o game?</label>
-                  <input id="game" placeholder="Selecione o game que deseja jogar"/>
+            <form className="mt-8 flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="game" className="font-semibold">Qual o game?</label>
+                <Input id="game" placeholder="Selecione o game que deseja jogar"/>
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="name">Seu nome/nickname</label>
+                <Input id="name" placeholder="Como te chamam ingame?"/>
+              </div>
+
+              <div className="grid grid-col-2 gap-6">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="yearsPlaying">Há quanto anos joga?</label>
+                  <Input id="yearsPlaying" placeholder="De 0 ao infinito e além"/>
                 </div>
 
-                <div>
-                  <label htmlFor="name">Seu nome/nickname</label>
-                  <input id="name" placeholder="Como te chamam ingame?"/>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="discord">Qual seu discord?</label>
+                  <Input id="discord" type="text" placeholder="Usuario#0000"/>
                 </div>
 
-                <div>
-                  <div>
-                    <label htmlFor="yearsPlaying">Há quanto anos joga?</label>
-                    <input id="yearsPlaying" placeholder="De 0 ao infinito e além"/>
-                  </div>
+                <div className="flex gap-6">
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="weekDays">Qual(is) dia(s) costuma jogar?</label>
 
-                  <div>
-                    <label htmlFor="discord">Qual seu discord?</label>
-                    <input id="discord" type="text" placeholder="Usuario#0000"/>
-                  </div>
-
-                  <div>
                     <div>
-                      <label htmlFor="weekDays">Qual(is) dia(s) costuma jogar?</label>
+                      <button 
+                        title="Domingo">D</button>
+                      <button 
+                        title="Segunda">S</button>
+                      <button 
+                        title="Terça">T</button>
+                      <button 
+                        title="Quarta">Q</button>
+                      <button 
+                        title="Quinta">Q</button>
+                      <button 
+                        title="Sexta">S</button>
+                      <button 
+                        title="Sábado">S</button>
                     </div>
-                    <div>
-                      <label htmlFor="hourStart">Qual horário do dia?</label>
-                      <div>
-                        <input id="hourStart" type="time" placeholder="De"/>
-                        <input id="hourEnd" type="time" placeholder="Até"/>
-                      </div>
+                  </div>
+                  <div className="flex flex-col gap-2 flex-1">
+                    <label htmlFor="hourStart">Qual horário do dia?</label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <Input id="hourStart" type="time" placeholder="De"/>
+                      <Input id="hourEnd" type="time" placeholder="Até"/>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div>
-                  <input type="checkbox" />
-                  Costumo me conectar ao chat de voz.
-                </div>
+              <div>
+                <Input type="checkbox" />
+                Costumo me conectar ao chat de voz.
+              </div>
 
-                <footer>
-                  <button>Cancelar</button>
-                  <button type="submit">
-                    <GameController />
-                    Encontrar duo
-                  </button>
-                </footer>
+              <footer>
+                <button>Cancelar</button>
+                <button type="submit">
+                  <GameController />
+                  Encontrar duo
+                </button>
+              </footer>
 
-              </form>
-            </Dialog.Content>
+            </form>
           </Dialog.Content>
         </Dialog.Portal>
       </Dialog.Root>
